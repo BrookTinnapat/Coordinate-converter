@@ -30,13 +30,13 @@ def utm_to_latlon():
         lon, lat = transformer.transform(easting, northing)
         print(f"\nLatitude: {lat:.6f}, Longitude: {lon:.6f}")
     except:
-        print("❗ รูปแบบข้อมูลไม่ถูกต้อง กรุณาลองใหม่")
+        print("❗ Data is invalid. Try again")
     
-    input("\nกด Enter เพื่อกลับไปที่เมนูหลัก...")
+    input("\nPress Enter to back to main menu...")
 
 def latlon_to_utm():
     print("\n=== GPS → UTM ===")
-    print("พิมพ์ 'b' เพื่อย้อนกลับเมนูหลัก")
+    print("Type 'b' to return to the main menu")
 
     lat_input = input("Enter Latitude: ")
     if lat_input.lower() == "b":
@@ -58,19 +58,19 @@ def latlon_to_utm():
         hemisphere = "N" if northern else "S"
         print(f"\nEasting: {easting:.3f}, Northing: {northing:.3f}, Zone: {zone_number}{hemisphere}")
     except:
-        print("❗ รูปแบบข้อมูลไม่ถูกต้อง กรุณาลองใหม่")
+        print("❗ Data is invalid. Try again")
 
-    input("\nกด Enter เพื่อกลับไปที่เมนูหลัก...")
+    input("\nPress Enter to back to main menu...")
 
 # ============ Main Menu ============
 while True:
     print("\n============================")
-    print(" โปรแกรมแปลงพิกัด UTM ⇄ GPS ")
+    print(" Coordinate converter UTM ⇄ GPS ")
     print("============================")
-    print("1 = แปลง UTM → GPS")
-    print("2 = แปลง GPS → UTM")
-    print("0 = ออกจากโปรแกรม")
-    choice = input("กรุณาเลือก (0-2): ")
+    print("1 = Convert UTM → GPS")
+    print("2 = Convert GPS → UTM")
+    print("0 = Exit")
+    choice = input("Select (0-2): ")
 
     if choice == "1":
         utm_to_latlon()
@@ -80,4 +80,4 @@ while True:
         print("Exiting the program...")
         break
     else:
-        print("❗ กรุณาเลือกใหม่ (0-2)\n")
+        print("❗ Select (0-2)\n")
